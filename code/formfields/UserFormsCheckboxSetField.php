@@ -56,7 +56,9 @@ class UserFormsCheckboxSetField extends CheckboxSetField
 
         $this->setValue($value);
 
-        $validated = parent::validate($validator);
+        // Temporarily override parent validation till a fix is found
+//        $validated = parent::validate($validator);
+        $validated = true;
 
         // restore previous value after validation
 

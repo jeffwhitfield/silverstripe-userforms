@@ -26,18 +26,6 @@ class UserFormsCheckboxSetField extends CheckboxSetField
     /**
      * @inheritdoc
      *
-     * @return array
-     */
-    public function getSourceAsArray()
-    {
-        $array = parent::getSourceAsArray();
-
-        return array_values($array);
-    }
-
-    /**
-     * @inheritdoc
-     *
      * @param Validator $validator
      *
      * @return bool
@@ -56,9 +44,7 @@ class UserFormsCheckboxSetField extends CheckboxSetField
 
         $this->setValue($value);
 
-        // Temporarily override parent validation till a fix is found
-//        $validated = parent::validate($validator);
-        $validated = true;
+        $validated = parent::validate($validator);
 
         // restore previous value after validation
 

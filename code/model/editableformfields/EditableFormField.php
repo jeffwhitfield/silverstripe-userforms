@@ -836,8 +836,7 @@ class EditableFormField extends DataObject
 
         // set the right title on this field
         if ($this->RightTitle) {
-            // Since this field expects raw html, safely escape the user data prior
-            $field->setRightTitle(Convert::raw2xml($this->RightTitle));
+            $field->setRightTitle($this->RightTitle);
         }
 
         // if this field is required add some
